@@ -1,0 +1,7 @@
+C:\#All\Development\C#\Labyrinth\Labyrinth\Dog Labirynth\Resources\Levels\Level1.txt
+C:\#All\Development\C#\Labyrinth\Labyrinth\Dog Labirynth\Resources\Levels\Level2.txt
+C:\#All\Development\C#\Labyrinth\Labyrinth\Dog Labirynth\Labyrinth.exe
+C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.AssemblyReference.cache
+C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.SuggestedBindingRedirects.cache
+C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.CoreCompileInputs.cache
+C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.exe
