@@ -1,25 +1,59 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using Labyrinth.Scripts.GameConsole;
+using Labyrinth.Scripts.GameLevels.LevelTiles;
 
 namespace Labyrinth.Scripts.GameLevels
 {
-	public class Levels
+	public static class Levels
 	{
 		private const string LevelsPath = "Resources/Levels/";
 
-		public Levels()
+		private static List<Level> _levelsList;
+		public static List<Level> LevelsList
 		{
-			LoadLevels();
+			get
+			{
+				if (_levelsList == null)
+				{
+					_levelsList = new List<Level>();
+					LoadLevels();
+				}
+
+				return _levelsList;
+			}
 		}
 
-		public List<Level> LevelsList { get; private set; }
-
-		private void LoadLevels()
+		public static void LoadLevels()
 		{
-			Console.WriteLine(Directory.GetCurrentDirectory());
-			// load file from LevelsPath
-
+			var directoryPath = Path.Combine(Environment.CurrentDirectory, LevelsPath);
+			var levels = Directory.GetFiles(directoryPath);
+			foreach (var t in levels)
+			{
+				var filePath = Path.Combine(LevelsPath, t);
+				var text = File.ReadAllLines(filePath);
+				
+				var tiles = ParseLevel(text);
+				var level = new Level(tiles);
+				_levelsList.Add(level);
+			}
+		}
+		
+		private static List<List<Tile>> ParseLevel(in string[] text)
+		{
+			var tiles = new List<List<Tile>>();
+			foreach (var line in text)
+			{
+				var tileLine = new List<Tile>();
+				foreach (var t in line)
+				{
+					var tile = Tiles.GetTile(t);
+					tileLine.Add(tile);
+				}
+				tiles.Add(tileLine);
+			}
+			
+			return tiles;
 		}
 	}
 }

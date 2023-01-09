@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Labyrinth.Scripts.GameLevels;
 
 namespace Labyrinth
@@ -7,20 +8,12 @@ namespace Labyrinth
 	{
 		public static void Main(string[] args)
 		{
-			var levels = new Levels();
+			Console.WriteLine(Levels.LevelsList[0]);
+			Console.WriteLine(Levels.LevelsList[1]);
 
 			/*string[] level1 =
 			{
-				"########################",
-				"#                      #",
-				"#                      #",
-				"#                      #",
-				"#            X         #",
-				"#                      #",
-				"#                      #",
-				"#                      #",
-				"#                      #",
-				"########################"
+				
 			};
 			string[] level2 =
 			{
@@ -104,7 +97,8 @@ namespace Labyrinth
 				}
 			}*/
 		}
-
+		
+		/*
 		private static Coordinates FindFinish(string[] level)
 		{
 			for (int i = 0; i < level.Length; i++)
@@ -117,15 +111,15 @@ namespace Labyrinth
 					}
 				}
 			}
-
+		
 			return null;
 		}
-
+		
 		private static bool IsFinish(Coordinates player, Coordinates finish)
 		{
 			return player.x == finish.x && player.y == finish.y;
 		}
-
+		
 		private static void DrawLevel(string[] level, Coordinates player)
 		{
 			for (int i = 0; i < level.Length; i++)
@@ -151,23 +145,6 @@ namespace Labyrinth
 				}
 				Console.WriteLine();
 			}
-		}
-
-		private static bool IsMovable(string[] level, Coordinates player)
-		{
-			return level[player.x][player.y] == ' ' || level[player.x][player.y] == 'X';
-		}
-
-		public class Coordinates
-		{
-			public int x;
-			public int y;
-
-			public Coordinates(int x, int y)
-			{
-				this.x = x;
-				this.y = y;
-			}
-		}
+		}*/
 	}
 }

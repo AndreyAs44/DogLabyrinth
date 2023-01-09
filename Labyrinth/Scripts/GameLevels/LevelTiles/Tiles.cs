@@ -7,17 +7,24 @@ namespace Labyrinth.Scripts.GameLevels.LevelTiles
 	public static class Tiles
 	{
 		// Tile types
-		public static Tile EmptyTile => new Tile(' ', true, ConsoleColor.Black);
-		public static Tile PlayerTile => new Tile('@', true, ConsoleColor.Yellow);
-		public static Tile GoalTile => new Tile('X', true, ConsoleColor.Green);
-		public static Tile WallTile => new Tile('#', false, ConsoleColor.DarkGray);
+		public static readonly Tile EmptyTile = new(' ', true, ConsoleColor.Black);
+		public static readonly Tile PlayerTile = new('@', true, ConsoleColor.Yellow);
+		public static readonly Tile GoalTile = new('X', true, ConsoleColor.Green);
+		public static readonly Tile WallTile = new('#', false, ConsoleColor.DarkGray);
 
-		// logic
-		public static List<Tile> TilesList { get; } = new();
+		// List of all tiles
+		public static List<Tile> AllTiles => new()
+		{
+			EmptyTile, 
+			PlayerTile, 
+			GoalTile, 
+			WallTile
+		};
 
 		public static Tile GetTile(char c)
 		{
-			return TilesList.FirstOrDefault(t => t.Symbol == c);
+			var tile = AllTiles.FirstOrDefault(t => t.Symbol == c);
+			return tile;
 		}
 	}
 }

@@ -9,10 +9,15 @@ namespace Labyrinth.Scripts.GameLevels.LevelTiles
 			Symbol = symbol;
 			IsWalkable = isWalkable;
 			ConsoleColor = consoleColor;
-			Tiles.TilesList.Add(this);
+			Tiles.AllTiles.Add(this);
 		}
 		public char Symbol { get; }
 		public bool IsWalkable { get; }
 		public ConsoleColor ConsoleColor { get; }
+		
+		public override string ToString()
+		{
+			return $"Symbol: {Symbol}, IsWalkable: {IsWalkable}, ConsoleColor: {ConsoleColor}";
+		}
 	}
 }
