@@ -9,20 +9,8 @@ public static class Levels
 {
 	private const string LevelsPath = "Resources/Levels/";
 
-	private static List<Level> _levelsList;
-	public static List<Level> LevelsList
-	{
-		get
-		{
-			if (_levelsList == null)
-			{
-				_levelsList = new List<Level>();
-				LoadLevels();
-			}
-
-			return _levelsList;
-		}
-	}
+	private static List<Level> _levelsList = new();
+	public static List<Level> LevelsList => _levelsList;
 
 	public static void LoadLevels()
 	{

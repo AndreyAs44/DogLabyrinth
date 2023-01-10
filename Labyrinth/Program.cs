@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Linq;
-using Labyrinth.Scripts.GameLevels;
+using Labyrinth.Scripts.GameLogic;
 
 namespace Labyrinth
 {
@@ -8,26 +7,10 @@ namespace Labyrinth
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine(Levels.LevelsList[0]);
-			Console.WriteLine(Levels.LevelsList[1]);
+			Console.CursorVisible = false;
+			GameLoop.StartGameLoop();
 
-			/*string[] level1 =
-			{
-				
-			};
-			string[] level2 =
-			{
-				"########################",
-				"#      #               #",
-				"#      #   #           #",
-				"#      #   #           #",
-				"#      #X  ######      #",
-				"#      #####           #",
-				"#                      #",
-				"#                      #",
-				"#                      #",
-				"########################"
-			};
+			/*
 			string[][] levels = new string[2][];
 			levels[0] = level1;
 			levels[1] = level2;
@@ -98,23 +81,7 @@ namespace Labyrinth
 			}*/
 		}
 		
-		/*
-		private static Coordinates FindFinish(string[] level)
-		{
-			for (int i = 0; i < level.Length; i++)
-			{
-				for (int j = 0; j < level[i].Length; j++)
-				{
-					if (level[i][j] == 'X')
-					{
-						return new Coordinates(i, j);
-					}
-				}
-			}
-		
-			return null;
-		}
-		
+		/*		
 		private static bool IsFinish(Coordinates player, Coordinates finish)
 		{
 			return player.x == finish.x && player.y == finish.y;
