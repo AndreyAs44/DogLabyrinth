@@ -33,7 +33,7 @@ public static class GameConsole
 	public static void ReplaceSymbol(char symbol, Coordinate coordinate, ConsoleColor color = ConsoleColor.White)
 	{
 		Console.SetCursorPosition(coordinate.x, coordinate.y);
-		Console.Write(symbol);
+		Console.Write(symbol.ToString());
 	}
 
 	public static void ReplaceLine(string message, int line, ConsoleColor color = ConsoleColor.White)

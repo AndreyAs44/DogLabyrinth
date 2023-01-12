@@ -9,7 +9,7 @@ public static class Tiles
 	// Tile types
 	public static readonly Tile EmptyTile = new(' ', true, ConsoleColor.Black);
 	public static readonly Tile PlayerTile = new('@', true, ConsoleColor.Yellow);
-	public static readonly Tile GoalTile = new('X', true, ConsoleColor.Green);
+	public static readonly Tile WinTile = new('X', true, ConsoleColor.Green);
 	public static readonly Tile WallTile = new('#', false, ConsoleColor.DarkGray);
 
 	// List of all tiles
@@ -17,7 +17,7 @@ public static class Tiles
 	{
 		EmptyTile,
 		PlayerTile,
-		GoalTile,
+		WinTile,
 		WallTile
 	};
 
