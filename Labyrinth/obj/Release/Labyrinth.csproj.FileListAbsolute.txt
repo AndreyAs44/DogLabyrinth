@@ -5,3 +5,4 @@ C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.Assembly
 C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.SuggestedBindingRedirects.cache
 C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.csproj.CoreCompileInputs.cache
 C:\#All\Development\C#\Labyrinth\Labyrinth\obj\Release\Labyrinth.exe
+C:\#All\Development\C#\Labyrinth\Labyrinth\Dog Labirynth\Resources\Levels\Level3.txt
