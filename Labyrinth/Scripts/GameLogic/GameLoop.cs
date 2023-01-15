@@ -55,7 +55,7 @@ public static class GameLoop
 		GameConsole.Clear();
 		GameConsole.WriteLine("Thanks for playing!", ConsoleColor.Green);
 		GameConsole.WriteLine("@PArrotCode 2023", ConsoleColor.DarkGray);
-		Thread.Sleep(1000);
+		Thread.Sleep(2000);
 		Environment.Exit(0);
 	}
 }
