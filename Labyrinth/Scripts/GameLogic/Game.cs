@@ -7,10 +7,11 @@ namespace Labyrinth.Scripts.GameLogic;
 
 public static class Game
 {
+	private static readonly Coordinate RenderOffset = new(0, 2);
+
 	private static Level _level;
 	private static Coordinate _playerPosition;
-	private static int _infoLineOffset = 1;
-	
+
 	public static void Play(Level level)
 	{
 		// инициализация уровня
@@ -22,8 +23,8 @@ public static class Game
 		LevelRendering.RenderLevel(level);
 
 		// отрисовываем изначальную позицию игрока
-		_playerPosition = new Coordinate(1, 1 + _infoLineOffset);
-		TileRendering.ReplaceTile(Tiles.PlayerTile, _playerPosition);
+		_playerPosition = Coordinate.one;
+		TileRendering.ReplaceTile(Tiles.PlayerTile, _playerPosition + RenderOffset);
 
 		// запускаем игру
 		while (IsWinPosition() == false)
@@ -50,12 +51,12 @@ public static class Game
 				break;
 			case ConsoleKey.W:
 			case ConsoleKey.UpArrow:
-				newPosition = _playerPosition + Coordinate.up;
+				newPosition = _playerPosition - Coordinate.up;
 				if (IsMovable(newPosition)) SetNewPlayerPosition(_playerPosition, newPosition);
 				break;
 			case ConsoleKey.S:
 			case ConsoleKey.DownArrow:
-				newPosition = _playerPosition + Coordinate.down;
+				newPosition = _playerPosition - Coordinate.down;
 				if (IsMovable(newPosition)) SetNewPlayerPosition(_playerPosition, newPosition);
 				break;
 		}
@@ -63,7 +64,7 @@ public static class Game
 
 	private static bool IsMovable(Coordinate position)
 	{
-		if (position.x > 0 && position.x < _level.Width && position.y > 0 && position.y < _level.Height)
+		if (position.x < 0 || position.x > _level.Width || position.y < 0 || position.y > _level.Height)
 		{
 			return false;
 		}
@@ -73,9 +74,9 @@ public static class Game
 	
 	private static void SetNewPlayerPosition(Coordinate oldPosition, Coordinate newPosition)
 	{
-		TileRendering.ReplaceTile(_level.GetTile(oldPosition), oldPosition);
+		TileRendering.ReplaceTile(_level.GetTile(oldPosition), oldPosition + RenderOffset);
 		_playerPosition = newPosition;
-		TileRendering.ReplaceTile(Tiles.PlayerTile, _playerPosition);
+		TileRendering.ReplaceTile(Tiles.PlayerTile, _playerPosition + RenderOffset);
 	}
 
 	private static bool IsWinPosition()

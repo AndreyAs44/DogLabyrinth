@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Labyrinth.Scripts.GameLevels;
 using Labyrinth.Scripts.Rendering;
 
@@ -52,9 +53,9 @@ public static class GameLoop
 	private static void ExitFromGame()
 	{
 		GameConsole.Clear();
-		GameConsole.WriteLine("Thanks for playing!");
-		GameConsole.WriteLine("Press any key to exit...");
-		GameConsole.ReadKey();
+		GameConsole.WriteLine("Thanks for playing!", ConsoleColor.Green);
+		GameConsole.WriteLine("@PArrotCode 2023", ConsoleColor.DarkGray);
+		Thread.Sleep(1000);
 		Environment.Exit(0);
 	}
 }

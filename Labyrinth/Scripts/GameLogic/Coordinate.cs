@@ -9,6 +9,9 @@ public struct Coordinate
 	public static Coordinate left = new(-1, 0);
 	public static Coordinate up = new(0, 1);
 	public static Coordinate down = new(0, -1);
+	public static Coordinate zero = new(0, 0);
+	public static Coordinate one = new(1, 1);
+	
 	public Coordinate(int x, int y)
 	{
 		this.x = x;

@@ -20,11 +20,11 @@ public class Level
 		Tiles = new List<List<Tile>>(tiles);
 		
 		// Find the win position
-		for (int x = 0; x < Height; x++)
+		for (int y = 0; y < Height; y++)
 		{
-			for (int y = 0; y < Width; y++)
+			for (int x = 0; x < Width; x++)
 			{
-				if (Tiles[x][y].Symbol == LevelTiles.Tiles.WinTile.Symbol)
+				if (Tiles[y][x].Symbol == LevelTiles.Tiles.WinTile.Symbol)
 				{
 					WinPosition = new Coordinate(x, y);
 					return;
@@ -35,7 +35,7 @@ public class Level
 	
 	public Tile GetTile(in Coordinate coordinate)
 	{
-		return Tiles[coordinate.x][coordinate.y];
+		return Tiles[coordinate.y][coordinate.x];
 	}
 
 	public override string ToString()
